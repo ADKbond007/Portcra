@@ -1,12 +1,12 @@
 {
   "theme_color": "#5486D1",
   "background_color": "#86CCD6",
-  "display": "browser",
   "scope": "/",
   "start_url": ".",
   "name": "Abhishek Portfolio",
   "short_name": "Portfolio",
   "description": "Welcome to my Portfolio",
+  "display": "standalone",
   "icons": [
     {
             "src": "images/icon-192x192.png",
