@@ -25,6 +25,7 @@
             flex-direction: column;
             align-items: center;
             padding: 10px;
+            min-height: 98px;
             @include box-shadow-three-sides;
             .skill-card-img{
                 height: 50px;

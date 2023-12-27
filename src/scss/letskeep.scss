@@ -24,6 +24,9 @@
         @media screen and (max-width:768px) {
             text-align: center;
         }
+        @media screen and (max-width:400px) {
+            font-size: 2rem;
+        }
     }
     .lk-component{
         flex-basis: 50%;
@@ -40,6 +43,9 @@
             color: $font-color-primary;
             font-family: $superboldfont;
             animation: fadeinleft 2s;
+            @media screen and (max-width:400px) {
+                font-size: 2rem;
+            }
         }
     }
 }
