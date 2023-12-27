@@ -4,7 +4,7 @@
     .aboutme-title{
         color: $font-color-title;
         font-weight: $font-bold;
-        font-size: $font-size-title;
+        font-size: $font-size-title-alt;
         font-family: $altfont;
     }
     .aboutme-content{
@@ -16,6 +16,7 @@
             font-size: $font-size-secondary;
             padding-bottom: 10px;
             flex-basis: 70%;
+            text-align: justify;
         }
         .aboutme-img{
             display: block;

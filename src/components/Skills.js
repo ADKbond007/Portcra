@@ -50,7 +50,7 @@ const Skills = () => {
         innerHtml: ""
     });
     const clickHandler = (e, skillName) => {
-        console.log("skillname ", skillName);
+        // console.log("skillname ", skillName);
         if (e.currentTarget.dataset.flipped === "true") {
             e.currentTarget.style.transform = "rotateY(0deg)";
             // e.currentTarget.classList.add("not-flipped");
@@ -61,7 +61,7 @@ const Skills = () => {
                 setLastFlipped({ flippedName: "", innerHtml: "" });
             }
             e.currentTarget.dataset.flipped = "false";
-            console.log("Closed");
+            // console.log("Closed");
         }
         else if (e.currentTarget.dataset.flipped === "false") {
             e.currentTarget.style.transform = "rotateY(180deg)";
@@ -78,13 +78,8 @@ const Skills = () => {
             <span class='${level[skillName] === "Intermediate" ? "level-inter" : "level-text"}'>${level[skillName]}</span></div>`;
             e.currentTarget.dataset.flipped = "true";
 
-            console.log("Opener");
+            // console.log("Opener");
         }
-
-        // flippedArray.map((f) => {
-        //     document.getElementById(f + "-id").style.transform = "rotateY(-180deg)";
-        // });
-        // flippedArray.push(skillName);
     };
     return (
         <div className='skills-cont' id='myskills'>

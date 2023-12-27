@@ -22,7 +22,7 @@ const Reachout = () => {
             setCheckInvalid({ ...checkInvalid, invalidtext: false });
         }
     };
-    console.log(userInput, checkInvalid);
+    // console.log(userInput, checkInvalid);
     const handleSubmit = (e) => {
         let isFormValid = true;
         if (userInput.useremail === "") {
