@@ -1,0 +1,70 @@
+@import "./common/definitions";
+.cd-cont{
+    // background-color: $bg-shadow-color;
+    padding: $padding-20;
+    // box-shadow: 0 -10px 15px -5px gray;
+    .cd-title{
+        font-size: $font-size-title;
+        font-weight: $font-bold;
+        color: $font-color-title;
+        font-family: $altfont;
+    }
+    .cd-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        @media screen and (max-width:768px) {
+            flex-direction: column;
+        }
+        .cd-info{
+            flex-basis: 30%;
+            background-image: $bg-tb-white-blue;
+            color: $font-color-secondary;
+            border-radius: 10px;
+            padding: 20px 10px;
+            @include box-shadow-three-sides;
+            @media screen and (max-width:768px) {
+                margin: 20px 10px;
+            }
+            // .cd-phone-cont{
+            //     flex-basis: 50%;
+            // }
+            // .cd-mail-cont{
+            //     flex-basis: 50%;
+            // }
+            .cd-info-desc{
+                font-size: $font-size-secondary;
+            }
+            .cd-buttons{
+                display: flex;
+                justify-content: space-around;
+                align-items: flex-end;
+                .cd-phone-link,.cd-mail-link,.cd-copy-mail{
+                    @media screen and (max-width:786px) {
+                        margin: 5px;
+                    }
+                    margin: 10px;
+                    @include buttoncircle;
+                }
+            }
+            .cd-social-title{
+                font-weight: $font-bold;
+                font-size:$font-size-primary;
+                padding: 10px 0 20px;
+            }
+            .cd-social-buttons{
+                display: flex;
+                justify-content: space-around;
+                align-items: flex-end;
+                padding-top: 20px;
+                a{
+                    @include buttoncircle;
+                }
+                
+            }
+        }
+        .cd-form{
+            flex-basis: 70%;
+        }
+    }
+}

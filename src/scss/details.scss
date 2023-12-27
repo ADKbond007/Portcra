@@ -1,0 +1,84 @@
+@import "./common/definitions";
+
+.details-cont{
+    width: 100%;
+    // background-image: url("../../public/images/bg-main.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 70px 20px 0 20px;
+    // @include box-shadow-bottom-gray;
+    .details-top{
+        text-align: center;
+        .profile-img-cont{
+            padding:10px 0;
+            .profile-img{
+                box-sizing: border-box;
+                background-color: aliceblue;
+                object-fit: cover;
+                height: 150px;
+                width: 150px;
+                border-radius: 50%; 
+                &:hover{
+                    box-shadow: 0px 0px 10px 5px $bg-shadow-color;
+                }
+                transition: $globaltransition;
+            }
+        }
+        .profile-name{
+            color:$font-color-blue;
+            font-weight: $font-bold;
+            font-family: $titlefont;
+            font-size: $font-size-title;
+            .profile-name-black{
+                color: $font-color-primary;
+            }
+            .blinking-colon{
+                @include blinker(2s,infinite);
+            }
+        }
+        .profile-extras{
+            display: flex;
+            color: $font-color-blue;
+            flex-direction: column;
+            align-items: center;
+            font-size: $font-size-primary;
+            padding-bottom: 20px;
+            .profile-extras-quote{
+                .profile-name-black {
+                    color: $font-color-primary;
+                }
+            }
+            a{
+                margin: 10px;
+                text-decoration: none;
+                .resume-btn{
+                    display: block;
+                    @include buttonsecondary;
+                    padding:10px 40px;
+                }
+            }
+        }
+    }
+    .details-bottom{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        // background-color: $bg-secondary;
+        div[data-boxname~="desc-box"]{
+            flex-basis:33%;
+            @media screen and (max-width:786px) {
+                flex-basis:auto;
+            }
+            padding: $padding-20 10px;
+            text-align: center;
+            .desc-title{
+                color:$font-color-secondary;
+                font-size: $font-size-primary;
+            }
+            .desc-info{
+                font-size: $font-size-secondary;
+            }
+        }
+    }
+}

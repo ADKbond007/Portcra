@@ -1,0 +1,35 @@
+@import "./common/definitions";
+.bg-body-tertiary{
+    background-color: white !important;
+    position: fixed;
+    width: 100%;
+    @include box-shadow-bottom-gray;
+    z-index: 2;
+    .container-fluid {
+        justify-content: flex-end !important;
+        .navbar-toggler{
+            border: none;
+            &:focus{
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
+            .navbar-toggler-icon{
+                color: $font-color-title;
+            }
+        }
+    }
+}
+.nav-link{
+    color:  $font-color-primary;
+    // font-weight: $font-bold!important;
+    @media screen and (max-width:768px) {
+        font-size: $font-size-secondary;
+    }
+    &:hover{
+        color: $font-color-blue;
+    }
+}
+.nav-brand{
+    font-weight: $font-bold;
+}

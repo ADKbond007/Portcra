@@ -1,0 +1,29 @@
+@import "./common/definitions";
+.aboutme-cont{
+    padding: $padding-20;
+    .aboutme-title{
+        color: $font-color-title;
+        font-weight: $font-bold;
+        font-size: $font-size-title;
+        font-family: $altfont;
+    }
+    .aboutme-content{
+        display: flex;
+        @media screen and (max-width:768px) {
+            display: block;
+        }
+        .aboutme-desc{
+            font-size: $font-size-secondary;
+            padding-bottom: 10px;
+            flex-basis: 70%;
+        }
+        .aboutme-img{
+            display: block;
+            flex-basis: 30%;
+            text-align: center;
+            img{
+                height: 400px;
+            }
+        }
+    }
+}

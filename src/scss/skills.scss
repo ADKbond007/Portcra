@@ -1,0 +1,63 @@
+@import "./common/definitions";
+.skills-cont{
+    padding: 20px;
+    
+    .skills-title{
+        font-size: $font-size-title;
+        color: $font-color-title;
+        font-family: $altfont;
+        font-weight: $font-bold;
+    }
+    .skills-cards{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 2rem;
+        padding: 10px;
+        @media screen and (max-width:768px) {
+            grid-template-columns: repeat(2,minmax(0,1fr));
+            gap: 1.5rem;
+        }
+        .skill-card{
+            transition: all 200ms ease-in;
+            cursor: pointer;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            @include box-shadow-three-sides;
+            .skill-card-img{
+                height: 50px;
+                width: 50px;
+                text-align: center;
+            }
+            .skill-card-name{
+                font-size: $font-size-secondary;
+            }
+            &:hover{
+                // scale:1.1;   
+                .skill-card-name{
+                    color: $font-color-blue;
+                }             
+            }
+        }
+    }
+}
+.flipped{
+    transform: rotateY(180deg);
+}
+.not-flipped{
+    transform: rotateY(0deg);
+}
+.level-cont{
+    transition: all 0s ease-in;
+    transform: rotateY(180deg);
+    .level-text{
+        color:  $font-color-title;
+        font-size:  1.5rem;
+    }
+    .level-inter{
+        color: $font-color-title;
+        font-size: 1rem;
+    }
+}

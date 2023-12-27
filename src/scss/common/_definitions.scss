@@ -1,0 +1,132 @@
+//font styles
+$codefont: 'Inconsolata', serif;
+$titlefont: 'Merriweather', serif;
+$altfont: 'Sarabun', serif;
+$superboldfont: 'Archivo Black',serif;
+$font-color-primary: black;
+$font-color-secondary: white;
+$font-color-blue:rgb(104, 146, 213);
+$font-color-title: #86CCD6;
+$font-gradient-green:#86CCD6;
+$font-gradient-blue:#5486D1;
+$font-bold: 700;
+$font-size-title: 3rem;
+$font-size-primary: 1.5rem;
+$font-size-secondary: 1.2rem;
+
+//bg styles
+$bg-primary: rgb(248, 252, 251);
+// $bg-primary: rgb(243, 238, 234);
+// $bg-secondary: rgb(235, 227, 213);
+$bg-secondary: rgb(104, 146, 213);
+$bg-shadow-color:rgb(121, 209, 195);
+$bg-main-url: url("../../public/images/bg-main.jpg");
+$bg-tb-white-blue: linear-gradient(180deg,$font-gradient-green,$font-gradient-blue);
+
+//animations
+@keyframes blinker {
+    0% {
+        opacity: 100%;
+    }
+    50% {
+        opacity: 1%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+@mixin blinker($time,$loop){
+    animation: blinker $time $loop;
+}
+$globaltransition: all 0.15s ease-in-out;
+
+//button style
+$button-bg-color-primary: $font-color-blue;
+@mixin buttonprimary(){
+    border-radius: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: $font-color-secondary;
+    background-color: $button-bg-color-primary;
+    color: $font-color-secondary;
+    padding: 20px;
+    cursor: pointer;
+    transition: $globaltransition;
+    box-shadow: 0 15px 15px -5px black;
+    &:hover {
+        box-shadow: none;
+        background-color: $bg-primary;
+        border-color: $button-bg-color-primary;
+        color: $font-color-primary;
+    }
+}
+$button-bg-color-secondary: $font-color-blue;
+@mixin buttonsecondary() {
+    border-radius: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: $font-color-secondary;
+    background-color: $button-bg-color-secondary;
+    color: $font-color-secondary;
+    padding: 20px;
+    cursor: pointer;
+    transition: $globaltransition;
+    box-shadow: 0 15px 10px -5px grey;
+    &:hover {
+        background-color: $font-color-secondary;
+        border-color: $button-bg-color-secondary;
+        color: $font-color-blue;
+        box-shadow: none;
+    }
+}
+@mixin buttoncircle(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border-color: transparent;
+    background-color: white;
+    color: $font-color-primary;
+    transition: $globaltransition;
+    text-decoration: none;
+    cursor: pointer;
+    @include box-shadow-all-sides();
+    &:hover{
+        box-shadow: none;
+        scale: 1.2;
+        // background-color: $font-color-title;
+        color: $font-color-blue;
+    }
+}
+
+//shadow style
+@mixin box-shadow-bottom-blue(){
+    box-shadow: 0 10px 20px -5px $bg-secondary;
+}
+@mixin box-shadow-bottom-gray() {
+    box-shadow: 0 10px 20px -5px grey;
+}
+@mixin box-shadow-bottom-slate-gray() {
+    box-shadow: 0 10px 20px -5px slategray;
+}
+@mixin box-shadow-bottom-gray-darker() {
+    box-shadow: 0 15px 10px -5px grey;
+}
+@mixin box-shadow-top-gray() {
+    box-shadow: 0 -10px 15px -5px gray;
+}
+@mixin box-shadow-three-sides() {
+    box-shadow: 0px 20px 20px -4px gray;
+}
+@mixin box-shadow-all-sides(){
+    box-shadow: 0 0px 12px -2px slategray;
+}
+//padding and margins
+$padding-20: 20px;
+.title-spacing{
+    margin:20px 0;
+}

@@ -1,0 +1,21 @@
+@import "./common/definitions";
+.reach-cont{
+    padding: $padding-20;
+    margin: 0 10px;
+    border-radius: 10px;
+    height: 100%;
+    @include box-shadow-three-sides;
+}
+.button-form-submit{
+    width: 100%;
+    @include buttonprimary;
+    padding: 10px;
+    font-size: $font-size-primary;
+    @include box-shadow-bottom-gray;
+    &:hover{
+        color: $font-color-blue;
+    }
+}
+.reach-form-label{
+    font-size: $font-size-secondary;
+}

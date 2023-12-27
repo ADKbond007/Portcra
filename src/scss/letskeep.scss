@@ -1,0 +1,45 @@
+@import "./common/definitions";
+@keyframes fadeinleft {
+    0%{
+        transform: translateX(0);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(20px);
+        opacity: 1;
+    }
+}
+.lk-cont{  
+    display: flex;
+    @media screen and (max-width:768px) {
+        flex-direction: column;
+    }
+    .lk-static {
+        font-size: $font-size-title;
+        display: inline-block;
+        color: $font-color-blue;
+        font-family: $superboldfont;
+        flex-basis: 50%;
+        text-align: right;
+        @media screen and (max-width:768px) {
+            text-align: center;
+        }
+    }
+    .lk-component{
+        flex-basis: 50%;
+        text-align: left;
+        @media screen and (max-width:768px) {
+            text-align: center;
+        }
+        // display: flex;
+        // justify-content: space-around;
+        
+        #lk-dynamic{
+            font-size: $font-size-title;
+            display: inline-block;
+            color: $font-color-primary;
+            font-family: $superboldfont;
+            animation: fadeinleft 2s;
+        }
+    }
+}
