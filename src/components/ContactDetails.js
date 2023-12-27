@@ -62,7 +62,11 @@ const ContactDetails = () => {
                         <OverlayTrigger
                             placement="top"
                             delay={{ show: 50, hide: 100 }}
-                            overlay={renderTooltip}
+                            overlay={
+                                <Tooltip id={`tooltip-mail`}>
+                                    {tooltipText}
+                                </Tooltip>
+                            }
                         >
                             <Button variant="success" className='cd-copy-mail' onClick={copyMailHandler}>
                                 {tooltipText === "Copy Mail" ? <i className="fa-solid fa-copy"></i> : <i className="fa-solid fa-check"></i>}
@@ -74,7 +78,11 @@ const ContactDetails = () => {
                         <OverlayTrigger
                             placement="bottom"
                             delay={{ show: 50, hide: 100 }}
-                            overlay={renderTooltiplinkedin}
+                            overlay={
+                                <Tooltip id={`tooltip-linkedin`}>
+                                    LinkedIn
+                                </Tooltip>
+                            }
                         >
                             <a href="https://www.linkedin.com/in/abhishek-kumar-118679214/" className='cd-linkedin-link'>
                                 <div className='cd-linkedin'>
@@ -85,7 +93,9 @@ const ContactDetails = () => {
                         <OverlayTrigger
                             placement="bottom"
                             delay={{ show: 50, hide: 100 }}
-                            overlay={renderTooltipyoutube}
+                            overlay={<Tooltip id={`tooltip-youtube`}>
+                                YouTube
+                            </Tooltip>}
                         >
                             <a href="https://www.youtube.com/channel/UC_axYMv390Qpt5OIGLr4K8g" className='cd-youtube-link'>
                                 <div className='cd-youtube'>
@@ -96,7 +106,9 @@ const ContactDetails = () => {
                         <OverlayTrigger
                             placement="bottom"
                             delay={{ show: 50, hide: 100 }}
-                            overlay={renderTooltipcode}
+                            overlay={<Tooltip id={`tooltip-code`}>
+                                Codesandbox
+                            </Tooltip>}
                         >
                             <a href="https://codesandbox.io/u/ADK" className='cd-code-link'>
                                 <div className='cd-code'>

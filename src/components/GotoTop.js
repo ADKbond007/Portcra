@@ -5,7 +5,7 @@ const GotoTop = ({ topBtn }) => {
     return (
         <div className='gototop-cont' style={{ display: topBtn }}>
             <a className='gototop-link' href="#mydetails">
-                <Button><i class="fa-solid fa-jet-fighter-up"></i></Button>
+                <Button><i className="fa-solid fa-jet-fighter-up"></i></Button>
             </a>
         </div>
     );
