@@ -6,26 +6,30 @@ import "../scss/contactdetails.scss";
 import Reachout from './Reachout';
 const ContactDetails = () => {
     const [tooltipText, setTooltipText] = useState("Copy Mail");
-    const renderTooltip = (props) => (
-        <Tooltip id="button-tooltip" {...props}>
-            {tooltipText}
-        </Tooltip>
-    );
-    const renderTooltiplinkedin = (props) => (
-        <Tooltip id="button-tooltip" {...props}>
-            LinkedIn
-        </Tooltip>
-    );
-    const renderTooltipyoutube = (props) => (
-        <Tooltip id="button-tooltip" {...props}>
-            YouTube
-        </Tooltip>
-    );
-    const renderTooltipcode = (props) => (
-        <Tooltip id="button-tooltip" {...props}>
-            Codesandbox.io
-        </Tooltip>
-    );
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 500 ? true : false);
+    }, []);
+    // const renderTooltip = (props) => (
+    //     <Tooltip id="button-tooltip" {...props}>
+    //         {tooltipText}
+    //     </Tooltip>
+    // );
+    // const renderTooltiplinkedin = (props) => (
+    //     <Tooltip id="button-tooltip" {...props}>
+    //         LinkedIn
+    //     </Tooltip>
+    // );
+    // const renderTooltipyoutube = (props) => (
+    //     <Tooltip id="button-tooltip" {...props}>
+    //         YouTube
+    //     </Tooltip>
+    // );
+    // const renderTooltipcode = (props) => (
+    //     <Tooltip id="button-tooltip" {...props}>
+    //         Codesandbox.io
+    //     </Tooltip>
+    // );
     const copyMailHandler = (e) => {
         navigator.clipboard.writeText("abhishek14kumar98@gmail.com");
         setTooltipText("Mail Copied");
@@ -63,7 +67,7 @@ const ContactDetails = () => {
                             placement="top"
                             delay={{ show: 50, hide: 100 }}
                             overlay={
-                                <Tooltip id={`tooltip-mail`}>
+                                isMobile ? <></> : <Tooltip id={`tooltip-mail`}>
                                     {tooltipText}
                                 </Tooltip>
                             }
@@ -79,7 +83,7 @@ const ContactDetails = () => {
                             placement="bottom"
                             delay={{ show: 50, hide: 100 }}
                             overlay={
-                                <Tooltip id={`tooltip-linkedin`}>
+                                isMobile ? <></> : <Tooltip id={`tooltip-linkedin`}>
                                     LinkedIn
                                 </Tooltip>
                             }
@@ -90,10 +94,11 @@ const ContactDetails = () => {
                                 </div>
                             </a>
                         </OverlayTrigger>
+                        {isMobile}
                         <OverlayTrigger
                             placement="bottom"
                             delay={{ show: 50, hide: 100 }}
-                            overlay={<Tooltip id={`tooltip-youtube`}>
+                            overlay={isMobile ? <></> : <Tooltip id={`tooltip-youtube`}>
                                 YouTube
                             </Tooltip>}
                         >
@@ -106,7 +111,7 @@ const ContactDetails = () => {
                         <OverlayTrigger
                             placement="bottom"
                             delay={{ show: 50, hide: 100 }}
-                            overlay={<Tooltip id={`tooltip-code`}>
+                            overlay={isMobile ? <></> : <Tooltip id={`tooltip-codesandbox`}>
                                 Codesandbox
                             </Tooltip>}
                         >
