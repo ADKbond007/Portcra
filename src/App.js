@@ -1,7 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 import React, { createContext, useEffect, useState } from "react";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 import "./scss/app.scss";
 import Details from "./components/Details";
 import ContactDetails from "./components/ContactDetails";
@@ -17,7 +17,10 @@ function App() {
   const [topBtn, setTopBtn] = useState("none");
   useEffect(() => {
     document.addEventListener("scroll", () => {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      if (
+        document.body.scrollTop > 100 ||
+        document.documentElement.scrollTop > 100
+      ) {
         setTopBtn("block");
       } else {
         setTopBtn("none");
@@ -25,12 +28,14 @@ function App() {
     });
   });
   const [info, setInfo] = useState({
-    "Current Address": "904 Maruti Housing colony, Saraswati Vihar, Swami Vivekanand block, Sector-28, Gurugram-122002, Haryana",
-    "Permanent Address": "Flat no.203, Deva Apartment, Sheikhpura, Bailey Road, Patna-800014, Bihar",
+    "Current Address":
+      "904 Maruti Housing colony, Saraswati Vihar, Swami Vivekanand block, Sector-28, Gurugram-122002, Haryana",
+    "Permanent Address":
+      "Flat no.203, Deva Apartment, Sheikhpura, Bailey Road, Patna-800014, Bihar",
     DOB: "14th July 1998",
     Age: AgeCalc(),
-    Experience: WorkexCalc() + " Years",
-    Gender: "Male (He/Him)"
+    Experience: WorkexCalc() + " years ",
+    Gender: "Male (He/Him)",
   });
   return (
     <GlobalContext.Provider value={{ info: [info, setInfo] }}>
