@@ -22,6 +22,34 @@ const Reachout = () => {
       setCheckInvalid({ ...checkInvalid, invalidtext: false });
     }
   };
+  const checkEmailValidity = () => {
+    console.log("ON BLUE CALLED");
+    if (userInput.useremail === "") {
+      setCheckInvalid({ ...checkInvalid, invalidemail: true });
+    } else {
+      let r = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+      let testEmail = r.test(userInput.useremail);
+      if (!testEmail) {
+        setCheckInvalid({ ...checkInvalid, invalidemail: true });
+      } else {
+        setCheckInvalid({ ...checkInvalid, invalidemail: false });
+      }
+    }
+  };
+  const checkSubjectValidity = () => {
+    if (userInput.usersubject.length < 5) {
+      setCheckInvalid({ ...checkInvalid, invalidsubject: true });
+    } else {
+      setCheckInvalid({ ...checkInvalid, invalidsubject: false });
+    }
+  };
+  const checkTextValidity = () => {
+    if (userInput.usertext.length < 10) {
+      setCheckInvalid({ ...checkInvalid, invalidtext: true });
+    } else {
+      setCheckInvalid({ ...checkInvalid, invalidtext: true });
+    }
+  };
   // console.log(userInput, checkInvalid);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -91,13 +119,14 @@ const Reachout = () => {
               onChange={(e) =>
                 setUserInput({ ...userInput, useremail: e.target.value })
               }
+              //   onBlur={checkEmailValidity}
               isInvalid={checkInvalid["invalidemail"]}
             />
             <Form.Control.Feedback type="invalid" tooltip={false}>
               Enter Valid Email Adress
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail" size="sm">
+          <Form.Group className="mb-3" controlId="formBasicSubject" size="sm">
             <Form.Label className="reach-form-label">Subject</Form.Label>
             <Form.Control
               type="text"
@@ -105,6 +134,7 @@ const Reachout = () => {
               onChange={(e) =>
                 setUserInput({ ...userInput, usersubject: e.target.value })
               }
+              //   onBlur={checkSubjectValidity}
               isInvalid={checkInvalid["invalidsubject"]}
             />
             <Form.Control.Feedback type="invalid" tooltip={false}>
@@ -119,6 +149,7 @@ const Reachout = () => {
               onChange={(e) =>
                 setUserInput({ ...userInput, usertext: e.target.value })
               }
+              //   onBlur={checkTextValidity}
               placeholder="Enter email body"
               isInvalid={checkInvalid["invalidtext"]}
             />

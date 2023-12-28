@@ -7,6 +7,7 @@
   "short_name": "Portfolio",
   "description": "Welcome to my Portfolio",
   "display": "standalone",
+  "form-factor": "wide",
   "icons": [
     {
       "src": "images/icon-192x192.png",
