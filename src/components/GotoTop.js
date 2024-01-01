@@ -1,6 +1,8 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import "../scss/gototop.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faJetFighterUp } from "@fortawesome/free-solid-svg-icons";
 const GotoTop = ({ topBtn }) => {
   const chandler = () => {
     document
@@ -11,7 +13,7 @@ const GotoTop = ({ topBtn }) => {
     <div className="gototop-cont" style={{ display: topBtn }}>
       <a className="gototop-link" href="#mydetails">
         <Button className="gototop-btn" onClick={chandler}>
-          <i className="fa-solid fa-jet-fighter-up"></i>
+          <FontAwesomeIcon icon={faJetFighterUp} />
         </Button>
       </a>
     </div>
