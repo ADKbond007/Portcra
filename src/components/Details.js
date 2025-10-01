@@ -18,7 +18,7 @@ const Details = () => {
             <span className="profile-name-black">Front End</span> Web Developer
           </span>
           <a
-            href="https://drive.google.com/file/d/1ij495l7_L7NtKwf4EzA1UMK7zML5RXnI/view?usp=drive_link"
+            href="https://drive.google.com/file/d/10FsFewSC2TbJ804dJC34oQwnb_5O-qQ_/view?usp=drive_link"
             target="_new"
           >
             <button className="resume-btn">Resume</button>
